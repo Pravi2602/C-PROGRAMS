@@ -1,0 +1,437 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j, k;
+
+    scanf("%d", &n);
+
+    k = 0;
+    for (i = n; i >= 1; i--) {
+        for (j = 0; j < i; j++) {
+            printf("%d ", k++);
+        }
+        printf("\n");
+    }
+
+    k -= 1;
+    for (i = 1; i <= n; i++) {
+        for (j = 0; j < i; j++) {
+            printf("%d ", k--);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+
+void printPattern(int N) {
+    int i, j;
+
+    for (i = 0; i < N; i++) {
+        char ch = 'A';
+        for (j = 0; j < N - i; j++) {
+            printf("%c", ch++);
+        }
+        for (j = 0; j < 2 * i; j++) {
+            printf(" ");
+        }
+        ch--;
+        for (j = 0; j < N - i; j++) {
+            if (j != N - 1)
+                printf("%c", ch--);
+            else
+                printf("%c", ch);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int N;
+ 
+    scanf("%d", &N);
+
+    printPattern(N);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+void printPattern(int N) {
+    int i, j;
+
+    for (i = 1; i <= N; i++) {
+        for (j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        for (j = 1; j <= 2 * (N - i); j++) {
+            printf("  ");
+        }
+        for (j = i; j >= 1; j--) {
+            printf("%d ", i);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int N;
+   
+    scanf("%d", &N);
+
+    printPattern(N);
+
+    return 0;
+}
+
+include<stdio.h>
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    for(i=1;i<=n+1;i++)
+    {
+        for(j=n+1;j>=1;j--)
+        {
+            if(i>=j){
+            printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+#include<stdio.h>
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+if((i+j)%2==0)
+{
+            printf("1");}
+          else
+        {
+        printf("0");
+}
+    }
+printf("\n");
+}
+}
+
+#include <stdio.h>
+
+// Function to calculate GCD of two numbers
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+// Function to calculate LCM of two numbers
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        int n1, n2;
+        scanf("%d %d", &n1, &n2);
+        int gcd_val = gcd(n1, n2);
+        int lcm_val = lcm(n1, n2);
+        printf("%d\n", lcm_val);
+        printf("%d\n", gcd_val);
+    }
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int t, x, l, u;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d %d %d", &x, &l, &u);
+        int count = 0;
+        for (int i = l+1; i < u; i++) {
+            int num = i;
+            while (num) {
+                if (num % 10 == x) {
+                    count++;
+                }
+                num /= 10;
+            }
+        }
+        printf("%d\n", count);
+    }
+    return 0;
+}
+
+#include <stdio.h>
+  
+// Function to print the digit of
+// number N
+void printDigit(int N)
+{
+    int r;
+  
+    // Base Case
+    if (N == 0) {
+        return;
+    }
+  
+    // Extract the last digit
+    r = N % 10;
+  
+    // Recursive call to next
+    // iteration
+    printDigit(N / 10);
+  
+    // Print r
+    printf("%d\n", r);
+}
+  
+// Driver Code
+int main()
+{
+    int N;
+scanf("%d",&N);
+  
+    printDigit(N);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    int T, N;
+    scanf("%d", &T);
+    while (T--) {
+        scanf("%d", &N);
+        for (int i = 1; i <= N; i++) {
+            int k = i, j = 1;
+            while (j <= k) {
+                j <<= 1;
+            }
+            j >>= 1;
+            while (j > 0) {
+                printf("%d", k / j);
+                k %= j;
+                j >>= 1;
+            }
+            printf(" ");
+        }
+       
+    }
+    return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+    int n,a[100],i;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    int k=1;
+    for(i=0;i<n;i++)
+    {
+        if(a[0]!=a[i])
+        {
+            
+            k= 0;
+        }
+        else
+        {
+            k=1;
+        }
+    
+   } 
+   if(k==0)
+   {
+       printf("NO");
+   }
+   else{
+       printf("YES");
+   }
+}
+
+#include<stdio.h>
+int main()
+{
+    int n,a[100],sum=0,i;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(a[i]%2==1)
+        {
+            sum=sum+a[i];
+        }
+    }
+    printf("%d",sum);
+}
+
+#include<stdio.h>
+int main()
+{
+    int n,num,a[100],i,sum=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&num);
+    for(i=0;i<n;i++)
+    {
+        if(i>=0 && i<num)
+        {
+            sum=sum+a[i];
+        }
+    }
+    printf("%d",sum);
+}
+
+#include<stdio.h>
+int main()
+{
+    int n,i,sum=0;
+    scanf("%d",&n);
+    int a[100];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(a[i]>0)
+        {
+            sum=sum+a[i];
+}}
+printf("%d",sum);
+        
+    
+}
+
+
+#include <stdio.h>
+int main()
+
+{
+    int n,i;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+    if((i%3==0) && (i%5==0) )
+    {
+        printf("FizzBuzz\n");
+        
+    }
+    else if(i%3==0)    {
+        printf("Fizz\n");
+    }
+    else if(i%5==0) {
+    printf("Buzz\n");
+    }
+    else{
+        printf("%d\n",i);
+    }}
+}
+
+
+int main() 
+{
+    int a, b,i;
+    scanf("%d\n%d", &a, &b);
+  	// Complete the code.
+      for(i=a;i<=b;i++)
+      {
+          if(i>=1 && i<=9)
+          {
+          switch(i)
+          {
+              case 1:
+              printf("one\n");
+              break;
+              case 2:
+              printf("two\n");
+              break;
+              case 3:
+              printf("three\n");
+              break;
+              case 4:
+              printf("four\n");
+              break;
+              case 5:
+              printf("five\n");
+              break;
+              case 6:
+              printf("six\n");
+              break;
+              case 7:
+              printf("seven\n");
+              break;
+              case 8:
+              printf("eight\n");
+              break;
+              case 9:
+              printf("nine\n");
+              break;
+              default:
+              printf("nine\n");
+              break;          }
+      }
+     else if(i%2==0)
+      {
+          printf("even\n");
+      }
+      else{
+          printf("odd\n");
+      }}
+      
+      
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+
+    // Complete this function    
+
+
+int main() {
+    int a, b,c,d;
+    scanf("%d %d",&a,&b);
+    c=a+b;
+    d=a-b;
+    if(d<0)
+    {
+        d=-d;
+    }
+    printf("%d\n",c);
+    printf("%d",d);
+    
+    return 0;
+}
+
+
